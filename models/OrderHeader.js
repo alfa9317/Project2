@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Foods = sequelize.define("Foods", {
+  var OrderHeader = sequelize.define("OrderHeader", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -8,31 +8,27 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    FoodName: {
+    OrderStatus: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    FoodType: {
-      type: DataTypes.STRING,
+    OrderDate: {
+      type: DataTypes.DATE,
       allowNull: false,
       validate: {
         len: [1]
       }
-    },
-    Category: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    Price: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
     }
   });
-  return Foods;
+  OrderHeader.associate = function(models) {
+    OrderHeader.belongsTo(models.Customer, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  return OrderHeader;
 };
