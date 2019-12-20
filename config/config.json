@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "harry potter 8",
+    "database": "restaurant_db",
     "host": "localhost",
     "dialect": "mysql"
   },
