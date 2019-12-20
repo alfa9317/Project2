@@ -32,7 +32,16 @@ module.exports = function(sequelize, DataTypes) {
     Price: {
       type: DataTypes.DECIMAL,
       allowNull: false
+    },
+    Picture: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
+  Foods.associate = function(models) {
+    Foods.hasMany(models.OrderLines, {
+      onDelete: "cascade"
+    });
+  };
   return Foods;
 };
