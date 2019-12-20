@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Customer = sequelize.define("Customer", {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       validate: {
@@ -80,5 +80,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   });
+  Customer.associate = function(models) {
+    Customer.hasMany(models.OrderHeader, {
+      onDelete: "cascade"
+    });
+  };
   return Customer;
 };
