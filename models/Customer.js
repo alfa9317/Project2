@@ -8,78 +8,82 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    Name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    Street: {
+    street: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    Exterior: {
+    exterior: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    Interior: {
+    interior: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    ZipCode: {
+    zipCode: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    Province: {
+    province: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    City: {
+    city: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    State: {
+    state: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    Email: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    PhoneNumber: {
+    phoneNumber: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
-    Password: {
+    password: {
       type: DataTypes.STRING,
       allowNull: true
     }
   });
-
+  Customer.associate = function(models) {
+    Customer.hasMany(models.OrderHeader, {
+      onDelete: "cascade"
+    });
+  };
   return Customer;
 };
