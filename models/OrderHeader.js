@@ -18,11 +18,13 @@ module.exports = function(sequelize, DataTypes) {
     OrderDate: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: new Date(),
       validate: {
         len: [1]
       }
     }
   });
+  // WHEN A HEADER IS DELETED, ALSO IS DELETED THE ASSOCIATED LINES
   OrderHeader.associate = function(models) {
     OrderHeader.belongsTo(models.Customer, {
       foreignKey: {
