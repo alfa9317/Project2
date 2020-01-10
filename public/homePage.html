@@ -19,7 +19,7 @@
 <body>
     <!-- navbar -->
 <div id="navBar">
-    <nav class=" pink darken-2">
+    <nav class=" pink darken-1">
         <div class="nav-wrapper">
             <div class="container">
                 <a href="#" class="brand-logo"><img src="./images/miFonditaLogo.png" style="width: 160px; height: auto;margin-top: 2px;"></a>
@@ -82,9 +82,9 @@
                     <!-- <span class="white-text">I am a very simple card. I am good at containing small bits of information.
                     I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
                     </span> -->
-                    <span><button class="button"><img src="https://i.pinimg.com/originals/ef/96/b7/ef96b7ca0f841d9ef0a0ac41a3a19374.jpg" alt="menuImage" style="width: 100px; height: auto;"/><br><br>Desayunos</button></span>
-                    <span><button class="button"><img src="https://encolombia.com/wp-content/uploads/2019/05/Comidas-Bajas-en-Calor%C3%ADas-para-Toda-la-Semana-696x398.jpg" alt="menuImage" style="width: 100px; height: auto;"/><br><br>Comidas</button></span>
-                    <span><button class="button"><img src="https://cdn.ticbeat.com/src/uploads/2019/06/verano-810x540.jpg" alt="menuImage" style="width: 100px; height: auto;"/><br><br>Menú Vegetariano</button></span>
+                    <a href="/menu-page"><button class="button"><img src="https://i.pinimg.com/originals/ef/96/b7/ef96b7ca0f841d9ef0a0ac41a3a19374.jpg" alt="menuImage" style="width: 100px; height: auto;"/><br><br>Desayunos</button></a>
+                    <a href="/menu-page"><button class="button"><img src="https://encolombia.com/wp-content/uploads/2019/05/Comidas-Bajas-en-Calor%C3%ADas-para-Toda-la-Semana-696x398.jpg" alt="menuImage" style="width: 100px; height: auto;"/><br><br>Comidas</button></a>
+                    <a href="/menu-page"><button class="button"><img src="https://cdn.ticbeat.com/src/uploads/2019/06/verano-810x540.jpg" alt="menuImage" style="width: 100px; height: auto;"/><br><br>Menú Vegetariano</button></a>
                   </div>
             </div>
             <div class = "col s6">  
@@ -113,6 +113,7 @@
             $('.sidenav').sidenav();
             $('#slide_out_1').sidenav({ edge: 'left' });
             $('#slide_out_2').sidenav({ edge: 'right' });
+            $('.carousel').carousel();
         });
         
     </script>   
