@@ -16,6 +16,21 @@ p {
     background-color: #d81b60;
 }
 
+span {
+    font-style: italic;
+}
+
+.foodName {
+    color: black;
+}
+
+.imgMenu:hover{
+    width: 160px;
+    height: 160px;
+}
+
+
+
 .button{
     color: #fff !important;
     text-transform: uppercase;
