@@ -1,13 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Customer = sequelize.define("Customer", {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      validate: {
-        len: [1]
-      }
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     interior: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }

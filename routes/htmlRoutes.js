@@ -23,6 +23,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/menuPage.html"));
   });
 
+  app.get("/orders", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/menuPage.html"));
+  });
+  // Load New Customer Page
+  app.get("/newCustomer", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/registerForm.html"));
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
