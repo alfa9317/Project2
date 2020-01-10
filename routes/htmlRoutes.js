@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.get("/orders", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/menuPage.html"));
   });
-  // Load Menu page
+  // Load New Customer Page
   app.get("/newCustomer", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/registerForm.html"));
   });

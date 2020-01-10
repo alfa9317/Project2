@@ -7,19 +7,7 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
     db.OrderHeader.findAll({
-      attributes: {
-        include: [
-          [
-            db.Sequelize.fn("COUNT", db.Sequelize.col("orderlines.id")),
-            "linesCount"
-          ],
-          [
-            db.Sequelize.fn("SUM", db.Sequelize.col("orderlines.orderprice")),
-            "totalPrice"
-          ]
-        ]
-      },
-      include: [
+      /*include: [
         {
           model: db.OrderLines,
           include: [
@@ -28,8 +16,21 @@ module.exports = function(app) {
             }
           ]
         }
-      ],
-      group: ["orderlines.orderheaderid"]
+      ],*/
+      include: [{ model: db.OrderLines, attributes: [] }],
+      attributes: {
+        include: [
+          [
+            db.Sequelize.fn("COUNT", db.Sequelize.col("OrderLines.id")),
+            "linesCount"
+          ],
+          [
+            db.Sequelize.fn("SUM", db.Sequelize.col("OrderLines.orderprice")),
+            "totalPrice"
+          ]
+        ]
+      },
+      group: ["OrderLines.orderheaderid"]
     }).then(function(dbOrderHeader) {
       res.json(dbOrderHeader);
     });
@@ -37,7 +38,7 @@ module.exports = function(app) {
 
   // Get route for a specific ORDER HEADER
   app.get("/api/ordersDetail/:id", function(req, res) {
-    db.OrderLine.findAll({
+    db.OrderHeader.findAll({
       where: {
         id: req.params.id
       },
@@ -57,11 +58,30 @@ module.exports = function(app) {
   });
   // POST route for saving a new ORDER HEADER
   app.post("/api/orders", function(req, res) {
-    console.log(req.body);
     db.OrderHeader.create({
-      OrderStatus: "In process"
+      OrderStatus: "En proceso"
     }).then(function(dbOrderHeader) {
-      res.json(dbOrderHeader);
+      for (var i = 0; i < req.body.length; i++) {
+        console.log("A buscar " + req.body[i]);
+        db.Foods.findAll({
+          where: {
+            FoodName: req.body[i]
+          }
+        }).then(function(dbFoods) {
+          console.log("En THEN de Foods");
+          console.log(dbFoods);
+          if (dbFoods) {
+            db.OrderLines.create({
+              OrderPrice: dbFoods[0].Price,
+              FoodId: dbFoods[0].id,
+              OrderHeaderId: dbOrderHeader.id
+            }).then(function() {
+              console.log("Line Created successfully");
+            });
+          }
+        });
+      }
+      res.json("Se creo el pedido " + dbOrderHeader.id);
     });
   });
   // DELETE METHOD for deleting an order heather
