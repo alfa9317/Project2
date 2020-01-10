@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes) {
     OrderNumber: {
       type: DataTypes.INTEGER,
       allowNull: false
-      // autoIncrement: true
     },
     OrderStatus: {
       type: DataTypes.STRING,
