@@ -29,24 +29,18 @@ module.exports = function(app) {
     console.log(req.body);
     db.OrderLines.create({
       OrderPrice: req.body.OrderPrice
-    }).then(function(dbOrderHeader) {
-      res.json(dbOrderHeader);
+    }).then(function(dbOrderLines) {
+      res.json(dbOrderLines);
     });
   });
-
-  // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(
-  //     dbExample
-  //   ) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // DELETE METHOD for deleting an order line
+  app.delete("/api/order-lines/:id", function(req, res) {
+    db.OrderLines.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbOrderLines) {
+      res.json(dbOrderLines);
+    });
+  });
 };
