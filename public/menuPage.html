@@ -21,10 +21,8 @@
                     <a href="#" class="brand-logo"><img src="./images/miFonditaLogo.png" style="width: 160px; height: auto;margin-top: 2px;"></a>
                     <a href="#" class="sidenav-trigger" data-target="slide_out_1"><i class="material-icons">menu</i></a>
                     <ul class="hide-on-med-and-down right">
-                        <li><a>Inicio</a></li>
-                        <li><a>Pedidos</a></li>
-                        <li><a>Sobre nosotros</a></li>
-                        <li>
+                        <li><a> Salir </a></li>
+
                             <a href="#" data-target="slide_out_2" class="sidenav-trigger show-on-large">
                                 <img id = "navBarUserImage" class="circle" src="./images/placeholderUser.jpg" style="width: 35px; height: 35px;">
                             </a>
@@ -51,7 +49,13 @@
             <!-- Fotos de las entradas -->
             <p> ¿Con qué quieres empezar?</p>
             <div class="row">
-                <div class="col s3" > <img src="test images/sopa-de-fideos-a-los-tres-chiles.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <span class="foodName" data-foodId="Fideo"> Sopa de Fideo </span> </div>
+                <div class="col s3" > <span class="foodName"> Consomé de pollo </span> </div>
+                <div class="col s3" > <span class="foodName"> Crema de verduras </span> </div>
+                <div class="col s3" > <span class="foodName"> Lentejas </span> </div>           
+            </div> 
+            <div class="row">
+                <div class="col s3" > <img src="test images/sopa-de-fideos-a-los-tres-chiles.jpg" class="circle imgMenu " data-foodId="Fideo"></a> </div>
                 <div class="col s3" > <img src="test images/Consomé-de-pollo-para-dieta-640x427.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/receta-de-crema-de-verduras-al-curry-655x368.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/receta-facil-de-sopa-de-lentejas-con-tocino.jpg" class="circle imgMenu"></a> </div>           
@@ -62,6 +66,12 @@
             <!-- Fotos de las guarniciones -->
             
             <p> Elige alguna de nuestras guarniciones </p>
+            <div class="row">
+                <div class="col s3" > <span class="foodName"> Arroz a la mexicana </span> </div>
+                <div class="col s3" > <span class="foodName"> Spaguetti rojo </span> </div>
+                <div class="col s3" > <span class="foodName"> Ensalada de Lechuga </span> </div>
+                <div class="col s3" > <span class="foodName"> Frijoles charros </span> </div>           
+            </div> 
             <div class="row">
                 <div class="col s3" > <img src="test images/Arroz_a_la_Mexicana_Recipes_800x800.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/spaguetti_rojo.jpg" class="circle imgMenu"></a> </div>
@@ -74,7 +84,12 @@
             <!-- Fotos de los platos fuertes -->
             <p> ¿Ya te decidiste por un platillo? </p>
             <div class="row">
-
+                <div class="col s3" > <span class="foodName"> Albondigas de res </span> </div>
+                <div class="col s3" > <span class="foodName"> Tortitas de pollo </span> </div>
+                <div class="col s3" > <span class="foodName"> Pescado empanizado </span> </div>
+                <div class="col s3" > <span class="foodName"> Alambre de champiñones </span> </div>           
+            </div> 
+            <div class="row">
                 <div class="col s3" > <img src="test images/albondigas-de-res-en-salsa-de-tomate-y-chipotle-video-e1562345363262.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/tortitas-de-poro-con-pollo-566x440.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/pescado_empanizado_con_amaranto.jpg" class="circle imgMenu"></a> </div>
@@ -85,6 +100,12 @@
         <div class="container" id="foodContainer">
             <!-- Fotos de los postres -->
             <p> Lo más dulce al final </p>
+            <div class="row">
+                <div class="col s3" > <span class="foodName"> Fresas con Crema </span> </div>
+                <div class="col s3" > <span class="foodName"> Pay de limón </span> </div>
+                <div class="col s3" > <span class="foodName"> Gelatina </span> </div>
+                <div class="col s3" > <span class="foodName"> Tapioca </span> </div>         
+            </div> 
             <div class="row">
                 <div class="col s3" > <img src="test images/fresas-con-crema-batida-y-merengue.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/carlota de limon.jpg" class="circle imgMenu"></a> </div>
@@ -97,6 +118,12 @@
             <!-- Fotos de las bebidas -->
             <p> No te olvides de tu bebida </p>
             <div class="row">
+                <div class="col s3" > <span class="foodName"> Agua de jamaica </span> </div>
+                <div class="col s3" > <span class="foodName"> Agua de limón </span></div>
+                <div class="col s3" > <span class="foodName"> Agua de horchata </span> </div>
+                <div class="col s3" > <span class="foodName"> Agua de tamarindo </span> </div>           
+            </div> 
+            <div class="row">
                 <div class="col s3" > <img src="test images/agua_jamaica.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/comohaceraguadelimon.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/agua-horchata.jpg" class="circle imgMenu"></a> </div>
@@ -107,6 +134,12 @@
         <div class="container" id="foodContainer">
             <!-- Fotos de los complementos -->
             <p> ¿Necesitas algo más? </p>
+            <div class="row">
+                <div class="col s3" > <span class="foodName"> Pan </span> </div>
+                <div class="col s3" > <span class="foodName"> Tortillas </span> </div>
+                <div class="col s3" > <span class="foodName"> Cubiertos </span> </div>
+                <div class="col s3" > <span class="foodName"> Limón </span> </div>           
+            </div> 
             <div class="row">
                 <div class="col s3" > <img src="test images/pan_blanco.jpg" class="circle imgMenu"></a> </div>
                 <div class="col s3" > <img src="test images/tortillas_de_maiz.jpg" class="circle imgMenu"></a> </div>
@@ -122,7 +155,10 @@
             <a id= "submitOrderBtn" class="waves-effect waves-light btn-large"><i class="material-icons right">local_dining</i> Submit Order Button </a>
         </div>
     </div>
-</body>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/functionality.js"></script>
+    
+</body>
 
 </html>
