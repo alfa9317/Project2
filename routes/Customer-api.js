@@ -24,4 +24,19 @@ module.exports = function(app) {
       res.json(dbCustomer);
     });
   });
+  app.post("/api/newCustomer", function(req, res) {
+    db.Customer.findOne({
+      where: {
+        email: req.body.email
+      }
+    }).then(function(dbCust) {
+      if (!dbCust) {
+        db.Customer.create(req.body).then(function() {
+          res.json("Customer registered successfully");
+        });
+      } else {
+        res.json("There is a customer registered with same email");
+      }
+    });
+  });
 };

@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var OrderHeader = sequelize.define("OrderHeader", {
-    OrderNumber: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     OrderStatus: {
       type: DataTypes.STRING,
       allowNull: false,

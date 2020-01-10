@@ -1,13 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Foods = sequelize.define("Foods", {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      validate: {
-        len: [1]
-      }
-    },
     FoodName: {
       type: DataTypes.STRING,
       allowNull: false,
