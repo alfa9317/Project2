@@ -1,12 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var OrderHeader = sequelize.define("OrderHeader", {
-    id: {
+    OrderNumber: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
+      // autoIncrement: true
     },
     OrderStatus: {
       type: DataTypes.STRING,
@@ -24,12 +21,15 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  // WHEN A HEADER IS DELETED, ALSO IS DELETED THE ASSOCIATED LINES
+  // When a customer is deleted, also the order header
   OrderHeader.associate = function(models) {
     OrderHeader.belongsTo(models.Customer, {
       foreignKey: {
         allowNull: false
       }
+    });
+    OrderHeader.hasMany(models.OrderLines, {
+      onDelete: "cascade"
     });
   };
   return OrderHeader;
