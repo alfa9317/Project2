@@ -1,0 +1,17 @@
+.imgMenu {
+    width: 130px;
+    height: 130px;
+    
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    font-weight: bold;
+}
+
+#submitOrderBtn {
+    background-color: #d81b60;
+}

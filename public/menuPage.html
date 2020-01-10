@@ -12,21 +12,30 @@
     <title> AppName - Menu </title>
 </head>
 <body>
-    
-    <div class="container">
-        <!-- Container para el logo + slogan -->
-        <div class="container">
-            <div class="row">
-                <div class="col s3">
-                    <a href="https://placeholder.com"><img src="https://via.placeholder.com/150"></a>
-                </div>
-                <div class="col s9">
-                    <p> LOGO </p>
-                    <p> Slogan Slogan Slogan Slogan Slogan </p>
+
+    <!-- navbar -->
+    <div id="navBar">
+        <nav class="pink darken-1">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="#" class="brand-logo"><img src="./images/miFonditaLogo.png" style="width: 160px; height: auto;margin-top: 2px;"></a>
+                    <a href="#" class="sidenav-trigger" data-target="slide_out_1"><i class="material-icons">menu</i></a>
+                    <ul class="hide-on-med-and-down right">
+                        <li><a>Inicio</a></li>
+                        <li><a>Pedidos</a></li>
+                        <li><a>Sobre nosotros</a></li>
+                        <li>
+                            <a href="#" data-target="slide_out_2" class="sidenav-trigger show-on-large">
+                                <img id = "navBarUserImage" class="circle" src="./images/placeholderUser.jpg" style="width: 35px; height: 35px;">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
+    </div>
 
+        <br>
         <br>
         <br>
 
@@ -40,64 +49,80 @@
         <!-- Containers para los elementos del menu -->
         <div class="container" id="foodContainer">
             <!-- Fotos de las entradas -->
-            <p>Elige 1 entrada</p>
+            <p> ¿Con qué quieres empezar?</p>
             <div class="row">
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>           
-            </div> 
-        </div>
-
-        <div class="container" id="foodContainer">
-            <!-- Fotos de los platos fuertes -->
-            <p>Elige 1 plato fuerte</p>
-            <div class="row">
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>           
+                <div class="col s3" > <img src="test images/sopa-de-fideos-a-los-tres-chiles.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/Consomé-de-pollo-para-dieta-640x427.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/receta-de-crema-de-verduras-al-curry-655x368.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/receta-facil-de-sopa-de-lentejas-con-tocino.jpg" class="circle imgMenu"></a> </div>           
             </div> 
         </div>
 
         <div class="container" id="foodContainer">
             <!-- Fotos de las guarniciones -->
-            <p>Elige 1 guarnición</p>
+            
+            <p> Elige alguna de nuestras guarniciones </p>
             <div class="row">
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>           
+                <div class="col s3" > <img src="test images/Arroz_a_la_Mexicana_Recipes_800x800.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/spaguetti_rojo.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/5600-2-ensalada-de-lechugas-variadas-pepino-y-tomates-cherry-xl-668x400x80xX.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/frijoles-charros-1-1024x714.jpg" class="circle imgMenu"></a> </div>           
+            </div> 
+        </div>
+
+        <div class="container" id="foodContainer">
+            <!-- Fotos de los platos fuertes -->
+            <p> ¿Ya te decidiste por un platillo? </p>
+            <div class="row">
+
+                <div class="col s3" > <img src="test images/albondigas-de-res-en-salsa-de-tomate-y-chipotle-video-e1562345363262.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/tortitas-de-poro-con-pollo-566x440.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/pescado_empanizado_con_amaranto.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/alambre de champiñones.jpg" class="circle imgMenu"></a> </div>           
             </div> 
         </div>
 
         <div class="container" id="foodContainer">
             <!-- Fotos de los postres -->
-            <p>Elige 1 postre</p>
+            <p> Lo más dulce al final </p>
             <div class="row">
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>           
+                <div class="col s3" > <img src="test images/fresas-con-crema-batida-y-merengue.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/carlota de limon.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/gelatina-con-tutti-frutti.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/tapioca.jpg" class="circle imgMenu"></a> </div>           
             </div> 
         </div>
 
         <div class="container" id="foodContainer">
             <!-- Fotos de las bebidas -->
-            <p>Elige 1 bebida</p>
+            <p> No te olvides de tu bebida </p>
             <div class="row">
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>
-                <div class="col s3" > <a href="https://placeholder.com"><img src="https://via.placeholder.com/75" class="circle"></a> </div>           
+                <div class="col s3" > <img src="test images/agua_jamaica.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/comohaceraguadelimon.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/agua-horchata.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/agua-de-tamarindo.jpg" class="circle imgMenu"></a> </div>           
             </div> 
         </div>
 
+        <div class="container" id="foodContainer">
+            <!-- Fotos de los complementos -->
+            <p> ¿Necesitas algo más? </p>
+            <div class="row">
+                <div class="col s3" > <img src="test images/pan_blanco.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/tortillas_de_maiz.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/Cubiertos.jpg" class="circle imgMenu"></a> </div>
+                <div class="col s3" > <img src="test images/limon.jpg" class="circle imgMenu"></a> </div>           
+            </div> 
+        </div>
+
+        <br>
 
         <!-- Container para el boton de Submit order -->
         <div class="container" id="foodContainer">
-            <a class="waves-effect waves-light btn-large"><i class="material-icons right">local_dining</i> Submit Order Button </a>
+            <a id= "submitOrderBtn" class="waves-effect waves-light btn-large"><i class="material-icons right">local_dining</i> Submit Order Button </a>
         </div>
     </div>
 </body>
+
+
 </html>
