@@ -101,9 +101,13 @@
         var orderStatus = "Entregado"
         var orderPrice = "45"
 
-        if(orderData!==0){
-            for (var i = 0; i < orderData.length; i++) {          
-        
+        if(orderData.length!==0){
+            for (var i = 0; i < orderData.length; i++) { 
+                orderDate = orderData[i].OrderDate;
+                orderNum = orderData[i].id;
+                orderStatus = orderData[i].OrderStatus;
+                orderPrice = orderData[i].totalPrice;         
+                var order=
                     `
                     <div class="row">
                         <div class="col s12 m6">
