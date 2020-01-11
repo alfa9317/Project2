@@ -40,3 +40,20 @@ p {
     box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.4s ease 0s;
 }
+
+#carrousel {
+
+    position: absolute;
+    left: 36%;
+    top: 700px;
+
+}
+
+.mySlides {
+    display:none;
+}
+.w3-section {
+    max-width: 400pt;
+    position: relative;
+    left: -1%;
+}
