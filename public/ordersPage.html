@@ -25,9 +25,9 @@
                 <a href="#" class="brand-logo"><img src="./images/miFonditaLogo.png" style="width: 160px; height: auto;margin-top: 2px;"></a>
                 <a href="#" class="sidenav-trigger" data-target="slide_out_1"><i class="material-icons">menu</i></a>
                 <ul class="hide-on-med-and-down right">
-                    <li><a href="homePage.html">Inicio</a></li>
-                    <li><a href="ordersPage.html">Pedidos</a></li>
-                    <li><a href="aboutUsPage.html">Sobre nosotros</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li class="active"><a href="/orders">Pedidos</a></li>
+                    <li><a href="/about-us">Sobre nosotros</a></li>
                     <li>
                         <a href="#" data-target="slide_out_2" class="sidenav-trigger show-on-large">
                             <img id = "navBarUserImage" class="circle" src="./images/placeholderUser.jpg" style="width: 35px; height: 35px;">
@@ -46,15 +46,16 @@
         <img src="./images/sidenav_background.jpeg">
     </div>
     <a href="#user"><img id = "sideBarUserImage1" class="circle" src="./images/placeholderUser.jpg"></a>
-    <a href="#name"><span id = "sideBarUserName1" class="white-text name">User name</span></a>
-    <a href="#email"><span class="white-text email">test@gmail.com</span></a>
-    <a href="#phone"><span class="white-text phone">5555555555</span></a>
+    <a href="#name"><span id = "sideBarUserName2" class="white-text name">Martín Sosa Rodríguez</span></a>
+    <a href="#email"><span class="white-text email">martinsr@gmail.com</span></a>
+    <a href="#phone"><span class="white-text phone">5556532435</span></a>
+    <p style="font-size: 16px;color: blanchedalmond;">Av.Insurgentes Sur 1602, Mosqueta 66, Crédito Constructor, Benito Juárez, 03940 Ciudad de México, CDMX</p>
     </div></li>
-    <li class="active"><a><i class="material-icons">home</i>Home</a></li>
-    <li><a><i class="material-icons">playlist_play</i>Playlists</a></li>
-    <li><a><i class="material-icons">info</i>About us</a></li>
+    <li><a><i class="material-icons">home</i>Inicio</a></li>
+    <li class="active"><a><i class="material-icons">list</i>Pedidos</a></li>
+    <li><a><i class="material-icons">pan_tool</i>Sobre nosotros</a></li>
     <li><div class="divider"></div></li>
-    <li><a class="waves-effect" href="#!" id = "logout-button"><i class="material-icons">exit_to_app</i>Log Out</a></li>
+    <li><a class="waves-effect" href="" id = "edit-button"><i class="material-icons">edit</i>Editar información</a></li>
 </ul>
 
     <!-- Secondary side bar -->
@@ -64,13 +65,19 @@
             <img src="./images/sidenav_background.jpeg">
           </div>
           <a href="#user"><img id = "sideBarUserImage2" class="circle" src="./images/placeholderUser.jpg"></a>
-          <a href="#name"><span id = "sideBarUserName2" class="white-text name">User name</span></a>
-          <a href="#email"><span class="white-text email">test@gmail.com</span></a>
-          <a href="#phone"><span class="white-text phone">5555555555</span></a>
+          <a href="#name"><span id = "sideBarUserName2" class="white-text name">Martín Sosa Rodríguez</span></a>
+          <a href="#email"><span class="white-text email">martinsr@gmail.com</span></a>
+          <a href="#phone"><span class="white-text phone">5556532435</span></a>
+          <p style="font-size: 16px;color: blanchedalmond;">Av.Insurgentes Sur 1602, Mosqueta 66, Crédito Constructor, Benito Juárez, 03940 Ciudad de México, CDMX</p>
         </div></li>
-        <li><a class="waves-effect" href="" id = "logout-button"><i class="material-icons">exit_to_app</i>Log Out</a></li>
+        <li><a class="waves-effect" href="" id = "edit-button"><i class="material-icons">edit</i>Editar información</a></li>
         <li><div class="divider"></div></li>
     </ul>
+
+    <!-- Cards -->
+<div class="container" id="mainContainer" style="margin-top: 100px;">
+    
+</div>
 
 <!-- link a jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -83,12 +90,57 @@
 
 <script>
 
+    function ordersHead(){
+        $.ajax({ url: "/api/orders", method: "GET" })
+      .then(function(orderData) {
+
+        console.log(orderData);
+        console.log("------------------------------------");
+        var orderDate = "17th March"
+        var orderNum = "1"
+        var orderStatus = "Entregado"
+        var orderPrice = "45"
+
+        if(orderData!==0){
+            for (var i = 0; i < orderData.length; i++) {          
+        
+                    `
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card pink darken-1">
+                                <div class="card-content white-text">
+                                    <div class="card__meta">
+                                        <time>${orderDate}</time>
+                                    </div>
+                                    <span class="card-title"style="font-weight:bold;">Orden #${orderNum}</span>
+                    
+                                    <span>Estatus de la orden: ${orderStatus}</span>
+                                </div>
+                                <div class="card-action">
+                                    <span style="font-weight:bold;">Monto total a pagar: $${orderPrice}</span>
+                                    <a href="#" class="card-action-right" style="color: black;font-weight:bold;">Detalle de la orden</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+                    $("#mainContainer").append(order)
+            }
+        }else{
+            alert("No orders in the list");
+        }
+        
+      });
+    }
+
     $(document).ready(function(){
         $('.sidenav').sidenav();
         $('#slide_out_1').sidenav({ edge: 'left' });
         $('#slide_out_2').sidenav({ edge: 'right' });
         $('.carousel').carousel();
     });
+
+    ordersHead();
     
 </script>   
 
