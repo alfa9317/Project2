@@ -23,11 +23,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     Price: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 100
     },
     Picture: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     }
   });
   Foods.associate = function(models) {
